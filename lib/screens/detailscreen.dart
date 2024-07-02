@@ -20,7 +20,7 @@ class _WeatherDetailsPageState extends State<WeatherDetailsPage> {
     super.initState();
     response = widget.response;
   }
-
+  //refresh with refresh indicator
   Future<void> _refreshWeatherData() async {
     setState(() {
       inProgress = true;
@@ -58,6 +58,7 @@ class _WeatherDetailsPageState extends State<WeatherDetailsPage> {
       ),
     );
   }
+
 
   Widget _buildWeatherWidget() {
     if (response == null) {
@@ -139,18 +140,18 @@ class _WeatherDetailsPageState extends State<WeatherDetailsPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      _dateAndTimeWidget("Humidity",
+                      _dataAndTitleWidget("Humidity",
                           (response?.current?.humidity?.toString() ?? "") + " %"),
-                      _dateAndTimeWidget("Wind Speed",
+                      _dataAndTitleWidget("Wind Speed",
                           response?.current?.windKph?.toString() ?? ""),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      _dateAndTimeWidget("Local Time",
+                      _dataAndTitleWidget("Local Time",
                           response?.location?.localtime?.split(" ").last ?? ""),
-                      _dateAndTimeWidget("Local Date",
+                      _dataAndTitleWidget("Local Date",
                           response?.location?.localtime?.split(" ").first ?? ""),
                     ],
                   ),
@@ -162,8 +163,8 @@ class _WeatherDetailsPageState extends State<WeatherDetailsPage> {
       );
     }
   }
-
-  Widget _dateAndTimeWidget(String title, String data) {
+  //showing of data widget
+  Widget _dataAndTitleWidget(String title, String data) {
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: Column(

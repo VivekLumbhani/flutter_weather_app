@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     _loadLastSearchedLocations();
   }
-
+  //storing the last searched in local
   _loadLastSearchedLocations() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
+  // search widget
   Widget _buildSearchWidget() {
     return TextField(
       controller: _searchController,
@@ -83,6 +83,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  //last search box card
   Widget _buildLastSearchedLocations() {
     if (_lastSearchedLocations.isEmpty) {
       return Container();
@@ -111,6 +112,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  // calling api
   _getWeatherData(String location) async {
     if (location.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -127,6 +129,7 @@ class _HomePageState extends State<HomePage> {
       response = await WeatherApi().getCurrentWeather(location);
       if (response != null) {
         _saveLocation(location);
+        //moving to next detail page
         Navigator.push(
           context,
           MaterialPageRoute(

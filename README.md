@@ -1,6 +1,8 @@
-# weatherapp
+![WhatsApp Image 2024-07-02 at 15 52 41_4905e6c6](https://github.com/VivekLumbhani/flutter_weather_app/assets/116283316/15b2a4a9-b362-4a4f-be01-562d5f427e04)
 
-A new Flutter project.
+![WhatsApp Image 2024-07-02 at 15 52 40_c7f8151d](https://github.com/VivekLumbhani/flutter_weather_app/assets/116283316/0e9506e8-b88d-4592-aee0-708417b67f63)
+
+# weatherapp
 
 ## Getting Started
 
